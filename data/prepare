@@ -1,0 +1,43 @@
+#!/usr/bin/env python 
+# -*- coding: utf-8 -*- 
+"""
+ @Time : 2019/11/27 16:06 
+ @Author : ZHANG 
+ @File : prepare.py 
+ @Description:
+"""
+
+import json
+import numpy
+
+'''
+b= open('coco_bg.names', 'r')
+lb = b.readlines()
+d = open('cls_name.txt', 'r')
+ld = d.readlines()
+
+with open('num.txt','w') as f:
+    for i in range(80):
+        j = 0
+        for n in ld:
+            j = j+1
+            if lb[i]==n:
+                f.write(str(j) + '\n')
+                break
+            if j == 201:
+                f.write('nan\n')
+'''
+
+#随机抽取一个（0,1）高斯分布的300维度向量
+b = open('temp.txt','r')
+w = open('tt.txt','w')
+ll = b.readlines()
+#l = str(numpy.random.normal(size=300))
+for j in ll:
+    s = j.strip('\n')
+    s = s.replace('  ',',')
+    s = s.replace(' ', ',')
+    s = s.replace(',', ', ')
+    w.write(s)
+
+
